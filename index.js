@@ -65,6 +65,10 @@ const studentSchema = new mongoose.Schema({
 const Mentor = mongoose.model("Mentor", mentorSchema);
 const Student = mongoose.model("Student", studentSchema);
 
+//get all details
+app.get("/alldetails", async (req, res) => {
+res.json("basic server")
+})
 
 
 //Create mentor API
