@@ -66,8 +66,17 @@ const Mentor = mongoose.model("Mentor", mentorSchema);
 const Student = mongoose.model("Student", studentSchema);
 
 //get all details
-app.get("/alldetails", async (req, res) => {
-res.json("basic server")
+app.get("/studentdetails", async (req, res) => {
+try {
+  const studentdetails = await studentdetails.db("test")
+  .collection("students")
+  .find(req.query)
+  .toArray()
+  res.json(studentdetails);
+} catch (error) {
+  onsole.error("Error", error);
+    res.status(500).json({ error: "Failed to get details" });
+}
 })
 
 
