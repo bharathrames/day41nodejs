@@ -65,9 +65,11 @@ const studentSchema = new mongoose.Schema({
 const Mentor = mongoose.model("Mentor", mentorSchema);
 const Student = mongoose.model("Student", studentSchema);
 
+
+
 //Create mentor API
 
-app.post("/mentors", async (req, res) => {
+app.post("/taskmentors", async (req, res) => {
   try {
     const mentor = await Mentor.create(req.body);
     res.json(mentor);
@@ -78,7 +80,7 @@ app.post("/mentors", async (req, res) => {
 });
 
 //Create Student API
-app.post("/students", async (req, res) => {
+app.post("/taskstudents", async (req, res) => {
   try {
     const student = await Student.create(req.body);
     res.json(student);
