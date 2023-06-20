@@ -65,12 +65,13 @@ const studentSchema = new mongoose.Schema({
 const Mentor = mongoose.model("Mentor", mentorSchema);
 const Student = mongoose.model("Student", studentSchema);
 
-//get all details
+
+//get students details
 app.get("/studentdetails", async (req, res) => {
 try {
   const studentdetails = await studentdetails.db("test")
   .collection("students")
-  .find(req.query)
+  .find(req.body)
   .toArray()
   res.json(studentdetails);
 } catch (error) {
