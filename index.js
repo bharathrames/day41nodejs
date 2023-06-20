@@ -69,10 +69,7 @@ const Student = mongoose.model("Student", studentSchema);
 //get students details
 app.get("/studentdetails", async (req, res) => {
 try {
-  const studentdetails = await studentdetails.db("test")
-  .collection("students")
-  .find(req.body)
-  .toArray()
+  const studentdetails = await studentdetails.db("test").collection("students").find({}).toArray()
   res.json(studentdetails);
 } catch (error) {
   onsole.error("Error", error);
@@ -185,4 +182,6 @@ app.get('/students/:studentId/previous-mentor', async (req, res) =>{
         res.status(500).json( { error: "Failed to show previous mentor for student"});
     }
 });
+
+
 
