@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const app = express();
 app.use(express.json());
 
-// Connect to MongoDB
+// Connect to Mongodb
 mongoose
   .connect(
     "mongodb+srv://bharath91505:bharath123@cluster1.sjccidx.mongodb.net/?retryWrites=true&w=majority",
